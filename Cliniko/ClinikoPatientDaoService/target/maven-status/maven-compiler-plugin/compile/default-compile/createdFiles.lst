@@ -1,0 +1,4 @@
+com\cliniko\patient\controller\PatientController.class
+com\cliniko\patient\dao\PatientRepository.class
+com\cliniko\patient\ClinikoPatientDaoServiceApplication.class
+com\cliniko\patient\model\Patient.class
