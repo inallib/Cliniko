@@ -6,11 +6,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
-public class SpringBootWebApplication extends SpringBootServletInitializer {
+@EnableEurekaClient
+public class ClinikoWebApplication extends SpringBootServletInitializer {
     public static void main(String[] args) {
-        SpringApplication.run(SpringBootWebApplication.class, args);
+        SpringApplication.run(ClinikoWebApplication.class, args);
     }
 
 }
