@@ -26,8 +26,8 @@ public class PatientFacetController {
 		patient.setIsdCode("0091");
 		patient.setPhone("9986708232");
 		
-		patientFacetService.save(patient);
-		return "saved";
+		return patientFacetService.save(patient);
+//		return "saved";
 	}
 	
 	@RequestMapping("/loadall")

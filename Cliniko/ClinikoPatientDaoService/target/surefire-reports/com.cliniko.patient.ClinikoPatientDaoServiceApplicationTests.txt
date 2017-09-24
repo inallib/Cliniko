@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.cliniko.patient.ClinikoPatientDaoServiceApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.004 sec - in com.cliniko.patient.ClinikoPatientDaoServiceApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.003 sec - in com.cliniko.patient.ClinikoPatientDaoServiceApplicationTests
