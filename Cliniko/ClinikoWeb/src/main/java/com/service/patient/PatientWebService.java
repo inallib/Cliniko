@@ -18,7 +18,6 @@ import java.util.List;
  */
 @Service
 public class PatientWebService {
-
     @Autowired
     private RestTemplate restTemplate;
 

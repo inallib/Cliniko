@@ -10,7 +10,8 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class ClinikoWebApplication extends SpringBootServletInitializer {
+public class ClinikoWebApplication extends SpringBootServletInitializer{
+
     public static void main(String[] args) {
         SpringApplication.run(ClinikoWebApplication.class, args);
     }
