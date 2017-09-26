@@ -20,6 +20,7 @@ public class PatientWebController {
     @RequestMapping("/loadall")
     public @ResponseBody
     Iterable<Patient> loadAllPatient() {
-        return patientWebService.findAll();
+//        return patientWebService.findAll();
+        return null;
     }
 }
