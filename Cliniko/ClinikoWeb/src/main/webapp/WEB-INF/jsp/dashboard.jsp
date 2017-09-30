@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Example of Bootstrap 3 Responsive Navbar</title>
+<title>Clinik-o</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
@@ -73,25 +73,27 @@
 
   <div class="container">
         <div class="jumbotron">
-            <h1>Learn to Create Websites</h1>
-            <p>In today's world internet is the most popular way of connecting with the people. At <a href="https://www.tutorialrepublic.com" target="_blank">tutorialrepublic.com</a> you will learn the essential of web development technologies along with real life practice example, so that you can create your own website to connect with the people around the world.</p>
-            <p><a href="https://www.tutorialrepublic.com" target="_blank" class="btn btn-success btn-lg">Get started today</a></p>
+            <h1>Maintain your health reports here</h1>
+            <p>Clinik-o helps one to maintain any health related test result. Its structured,
+            safe easy to maintain. A Patient, doctor or health pro will be potential user of it. This would be the master history of a patients health all the way from his/her birth.
+            Going forward this would be integrated with some AI machine (e.g. Watson health) to get more organised and accurate advice from it.</p>
+            <p><a href="#" target="_blank" class="btn btn-success btn-lg">Sign up</a></p>
         </div>
         <div class="row">
             <div class="col-xs-4">
-                <h2>HTML</h2>
-                <p>HTML is a markup language that is used for creating web pages. The HTML tutorial section will help you understand the basics of HTML, so that you can create your own web pages or website.</p>
-                <p><a href="https://www.tutorialrepublic.com/html-tutorial/" target="_blank" class="btn btn-success">Learn More &raquo;</a></p>
+                <h2>Patient</h2>
+                <p>Patient module helps doctors, health profetionals to create a patients profile.</p>
+                <p><a href="/api/patient" target="_blank" class="btn btn-success">Lets go</a></p>
             </div>
             <div class="col-xs-4">
-                <h2>CSS</h2>
-                <p>CSS is used for describing the presentation of web pages. The CSS tutorial section will help you learn the essentials of CSS, so that you can fine control the style and layout of your HTML document.</p>
-                <p><a href="https://www.tutorialrepublic.com/css-tutorial/" target="_blank" class="btn btn-success">Learn More &raquo;</a></p>
+                <h2>Result</h2>
+                <p>Result module helps one to record a patients test result.</p>
+                <p><a href="/api/result" target="_blank" class="btn btn-success">Lets go</a></p>
             </div>
             <div class="col-xs-4">
-                <h2>Bootstrap</h2>
-                <p>Bootstrap is a powerful front-end framework for faster and easier web development. The Bootstrap tutorial section will help you learn the techniques of Bootstrap so that you can quickly create your own website.</p>
-                <p><a href="https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank" class="btn btn-success">Learn More &raquo;</a></p>
+                <h2>Admin</h2>
+                <p>Admin module helps technical administrators to monitor your application and rectify any errors.</p>
+                <p><a href="/api/admin" target="_blank" class="btn btn-success">Lets go</a></p>
             </div>
         </div>
         <hr>
@@ -100,10 +102,10 @@
                 <footer>
                 	<div class="text-center center-block">
 					            <br />
-					                <a href="https://www.facebook.com/bootsnipp"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
-						            <a href="https://twitter.com/bootsnipp"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
-						            <a href="https://plus.google.com/+Bootsnipp-page"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
-						            <a href="mailto:bootsnipp@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+					                <a href="#"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+						            <a href="#"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+						            <a href="#"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+						            <a href="#"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
 					<p>&copy; Saurav</p>
 					</div>
                     

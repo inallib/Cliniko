@@ -15,6 +15,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class ResultController {
     @RequestMapping("/result")
     public String showResult() {
-        return "result";
+        return "results";
     }
 }
