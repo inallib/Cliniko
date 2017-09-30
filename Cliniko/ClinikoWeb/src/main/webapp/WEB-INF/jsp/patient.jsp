@@ -21,6 +21,7 @@
 </style>
 </head> 
 <body>
+
 <div class="container">
     <nav class="navbar navbar-inverse">
         <!-- Brand and toggle get grouped for better mobile display -->
@@ -42,9 +43,9 @@
             
             <ul class="nav navbar-nav navbar-right">
             
-            	<li class="active"><a href="/api/dashboard">Home</a></li>
+            	<li><a href="/api/dashboard">Home</a></li>
 <!--                 <li><a href="#">Profile</a></li> -->
-                <li><a href="/api/patient">Patient</a></li>
+                <li  class="active"><a href="/api/patient">Patient</a></li>
                 <li><a href="/api/result">Results</a></li>
                 <li><a href="/api/admin">Admin</a></li>
             	<form class="navbar-form navbar-left">
@@ -72,30 +73,71 @@
 </div>
 
   <div class="container">
-        <div class="jumbotron">
-            <h1>Learn to Create Websites</h1>
-            <p>In today's world internet is the most popular way of connecting with the people. At <a href="https://www.tutorialrepublic.com" target="_blank">tutorialrepublic.com</a> you will learn the essential of web development technologies along with real life practice example, so that you can create your own website to connect with the people around the world.</p>
-            <p><a href="https://www.tutorialrepublic.com" target="_blank" class="btn btn-success btn-lg">Get started today</a></p>
-        </div>
-        <div class="row">
-            <div class="col-xs-4">
-                <h2>HTML</h2>
-                <p>HTML is a markup language that is used for creating web pages. The HTML tutorial section will help you understand the basics of HTML, so that you can create your own web pages or website.</p>
-                <p><a href="https://www.tutorialrepublic.com/html-tutorial/" target="_blank" class="btn btn-success">Learn More &raquo;</a></p>
-            </div>
-            <div class="col-xs-4">
-                <h2>CSS</h2>
-                <p>CSS is used for describing the presentation of web pages. The CSS tutorial section will help you learn the essentials of CSS, so that you can fine control the style and layout of your HTML document.</p>
-                <p><a href="https://www.tutorialrepublic.com/css-tutorial/" target="_blank" class="btn btn-success">Learn More &raquo;</a></p>
-            </div>
-            <div class="col-xs-4">
-                <h2>Bootstrap</h2>
-                <p>Bootstrap is a powerful front-end framework for faster and easier web development. The Bootstrap tutorial section will help you learn the techniques of Bootstrap so that you can quickly create your own website.</p>
-                <p><a href="https://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank" class="btn btn-success">Learn More &raquo;</a></p>
-            </div>
-        </div>
-        <hr>
-        <div class="row">
+        <form class = "form-horizontal" role = "form">
+   
+			   <div class = "form-group">
+			      <label for = "firstname" class = "col-sm-2 control-label">Name</label>
+					
+			      <div class = "col-sm-10">
+			         <input type = "text" class = "form-control" id = "firstname" placeholder = "Enter name">
+			      </div>
+			   </div>
+			   
+			   <div class = "form-group">
+			      <label for = "lastname" class = "col-sm-2 control-label">Email</label>
+					
+			      <div class = "col-sm-10">
+			         <input type = "text" class = "form-control" id = "lastname" placeholder = "Enter email">
+			      </div>
+			   </div>
+			   
+			   <div class = "form-group">
+			      <label for = "lastname" class = "col-sm-2 control-label">ISD Code</label>
+					
+			      <div class = "col-sm-10">
+			         <input type = "text" class = "form-control" id = "lastname" placeholder = "Enter ISD code">
+			      </div>
+			   </div>
+			   
+			   <div class = "form-group">
+			      <label for = "lastname" class = "col-sm-2 control-label">Phone</label>
+					
+			      <div class = "col-sm-10">
+			         <input type = "text" class = "form-control" id = "lastname" placeholder = "Enter phone">
+			      </div>
+			   </div>
+			   
+			   <div class = "form-group">
+			      <label for = "lastname" class = "col-sm-2 control-label">DOB</label>
+					
+			      <div class = "col-sm-10">
+			         <input type = "text" class = "form-control" id = "lastname" placeholder = "Enter DOB">
+			      </div>
+			   </div>
+			   
+			   <div class = "form-group">
+			      <label for = "lastname" class = "col-sm-2 control-label">Age</label>
+					
+			      <div class = "col-sm-10">
+			         <input type = "text" class = "form-control" id = "lastname" placeholder = "Enter age">
+			      </div>
+			   </div>
+			   
+			   <div class = "form-group">
+			      <label for = "lastname" class = "col-sm-2 control-label">Special ID</label>
+					
+			      <div class = "col-sm-10">
+			         <input type = "text" class = "form-control" id = "lastname" placeholder = "Enter special Id">
+			      </div>
+			   </div>
+			   
+			   <div class = "form-group">
+			      <div class = "col-sm-offset-2 col-sm-10">
+			         <button type = "submit" class = "btn btn-danger">Save</button>
+			   	  </div>
+   </div>
+	</form>
+	<div class="row">
             <div class="col-xs-12">
                 <footer>
                 	<div class="text-center center-block">
@@ -106,7 +148,6 @@
 						            <a href="mailto:bootsnipp@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
 					<p>&copy; Saurav</p>
 					</div>
-                    
                 </footer>
             </div>
         </div>
