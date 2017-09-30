@@ -1,21 +1,52 @@
-server:
-  port: 9090
+info:
+  component: Edge Server
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds:6000000
+
+zuul:
+  prefix: /api
+  routes:
+    create-patient:
+      path: /patient
+      serviceId: cliniko-web
+    dash-board:
+      path: /dashboard
+      serviceId: cliniko-web
+    admin:
+      path: /admin
+      serviceId: cliniko-web
+    result:
+          path: /result
+          serviceId: cliniko-web
+
+ribbon:
+  eureka:
+    enabled: true
 
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://127.0.0.1:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
+    registerWithEureka: false
 
-zuul:
-  #Service will be mapped under the /api URI
-  prefix: /cliniko
-#  Uncomment to disable auto-registering all services read from Eureka
-#  ignoredServices: '*'
-  routes:
-    customer-by-service:
-      path: /**
-      serviceId: cliniko-web
+server:
+  port: 9090
 
-spring:
-  application:
-    name: zuul-server
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: DEBUG
