@@ -133,7 +133,8 @@
 			   
 			   <div class = "form-group">
 			      <div class = "col-sm-offset-2 col-sm-10">
-			         <button type = "submit" class = "btn btn-danger">Save</button>
+			         <button type = "submit" class = "btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp;
+			         Save</button>
 			   	  </div>
    </div>
 	</form>
