@@ -19,12 +19,15 @@
 		margin-top: 20px;
 	}
 </style>
+
+<script src="//code.angularjs.org/snapshot/angular.min.js"></script>
+<script src="/resources/js/patient-script.js"></script>
+
 </head> 
-<body>
+<body ng-app="patient-app">
 
 <div class="container">
     <nav class="navbar navbar-inverse">
-        <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
                 <span class="sr-only">Toggle navigation</span>
@@ -43,11 +46,10 @@
             
             <ul class="nav navbar-nav navbar-right">
             
-            	<li><a href="/api/dashboard">Home</a></li>
-<!--                 <li><a href="#">Profile</a></li> -->
+            	<li><a href="/dashboard">Home</a></li>
                 <li  class="active"><a href="/api/patient">Patient</a></li>
-                <li><a href="/api/result">Results</a></li>
-                <li><a href="/api/admin">Admin</a></li>
+                <li><a href="/result">Results</a></li>
+                <li><a href="/admin">Admin</a></li>
             	<form class="navbar-form navbar-left">
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search patient details">
@@ -61,25 +63,23 @@
                     <ul class="dropdown-menu">
                         <li><a href="#">Messages</a></li>
                         <li><a href="#">Profile</a></li>
-<!--                         <li><a href="#"></a></li> -->
                         <li class="divider"></li>
                         <li><a href="#">Logout</a></li>
                     </ul>
                 </li>
-<!--                 <li><a href="#">Logout</a></li> -->
             </ul>
         </div>
     </nav>
 </div>
 
-  <div class="container">
+  <div class="container" ng-controller="patient-controller">
         <form class = "form-horizontal" role = "form">
    
 			   <div class = "form-group">
 			      <label for = "firstname" class = "col-sm-2 control-label">Name</label>
 					
 			      <div class = "col-sm-10">
-			         <input type = "text" class = "form-control" id = "firstname" placeholder = "Enter name">
+			         <input type = "text" class = "form-control" name="name" ng-model="patient.name" placeholder = "Enter name">
 			      </div>
 			   </div>
 			   
@@ -87,7 +87,7 @@
 			      <label for = "lastname" class = "col-sm-2 control-label">Email</label>
 					
 			      <div class = "col-sm-10">
-			         <input type = "text" class = "form-control" id = "lastname" placeholder = "Enter email">
+			         <input type = "text" class = "form-control" name="email" ng-model="patient.email" placeholder = "Enter email">
 			      </div>
 			   </div>
 			   
@@ -95,7 +95,7 @@
 			      <label for = "lastname" class = "col-sm-2 control-label">ISD Code</label>
 					
 			      <div class = "col-sm-10">
-			         <input type = "text" class = "form-control" id = "lastname" placeholder = "Enter ISD code">
+			         <input type = "text" class = "form-control" name="isdCode" ng-model="patient.isdCode" placeholder = "Enter ISD code">
 			      </div>
 			   </div>
 			   
@@ -103,7 +103,7 @@
 			      <label for = "lastname" class = "col-sm-2 control-label">Phone</label>
 					
 			      <div class = "col-sm-10">
-			         <input type = "text" class = "form-control" id = "lastname" placeholder = "Enter phone">
+			         <input type = "text" class = "form-control" name="phone" ng-model="patient.phone"  placeholder = "Enter phone">
 			      </div>
 			   </div>
 			   
@@ -111,7 +111,7 @@
 			      <label for = "lastname" class = "col-sm-2 control-label">DOB</label>
 					
 			      <div class = "col-sm-10">
-			         <input type = "text" class = "form-control" id = "lastname" placeholder = "Enter DOB">
+			         <input type = "text" class = "form-control" name="dob" ng-model="patient.dob" placeholder = "Enter DOB">
 			      </div>
 			   </div>
 			   
@@ -119,7 +119,7 @@
 			      <label for = "lastname" class = "col-sm-2 control-label">Age</label>
 					
 			      <div class = "col-sm-10">
-			         <input type = "text" class = "form-control" id = "lastname" placeholder = "Enter age">
+			         <input type = "text" class = "form-control" name="age" ng-model="patient.age" placeholder = "Enter age">
 			      </div>
 			   </div>
 			   
@@ -127,13 +127,13 @@
 			      <label for = "lastname" class = "col-sm-2 control-label">Special ID</label>
 					
 			      <div class = "col-sm-10">
-			         <input type = "text" class = "form-control" id = "lastname" placeholder = "Enter special Id">
+			         <input type = "text" class = "form-control" name="specialId" ng-model="patient.specialId" placeholder = "Enter special Id">
 			      </div>
 			   </div>
 			   
 			   <div class = "form-group">
 			      <div class = "col-sm-offset-2 col-sm-10">
-			         <button type = "submit" class = "btn btn-success"><i class="fa fa-floppy-o" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp;
+			         <button type = "submit" class = "btn btn-success" ng-click="update-patient(patient)"><i class="fa fa-floppy-o" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp;
 			         Save</button>
 			   	  </div>
    </div>

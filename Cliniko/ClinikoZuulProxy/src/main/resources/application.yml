@@ -18,10 +18,13 @@ hystrix:
             timeoutInMilliseconds:6000000
 
 zuul:
-  prefix: /api
+#  prefix: /api
   routes:
     create-patient:
       path: /patient
+      serviceId: cliniko-web
+    patient-js:
+      path: /resources/js/**
       serviceId: cliniko-web
     dash-board:
       path: /dashboard

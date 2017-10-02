@@ -43,11 +43,11 @@
             
             <ul class="nav navbar-nav navbar-right">
             
-            	<li><a href="/api/dashboard">Home</a></li>
+            	<li><a href="/dashboard">Home</a></li>
 <!--                 <li><a href="#">Profile</a></li> -->
-                <li  class="active"><a href="/api/patient">Patient</a></li>
-                <li><a href="/api/result">Results</a></li>
-                <li><a href="/api/admin">Admin</a></li>
+                <li class="active"><a href="/patient">Patient</a></li>
+                <li><a href="/result">Results</a></li>
+                <li><a href="/admin">Admin</a></li>
             	<form class="navbar-form navbar-left">
                 <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search patient details">
