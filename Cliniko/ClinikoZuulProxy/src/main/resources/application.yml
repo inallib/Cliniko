@@ -9,6 +9,7 @@ endpoints:
   health:
     sensitive: false
 
+
 hystrix:
   command:
     default:
@@ -23,9 +24,10 @@ zuul:
     create-patient:
       path: /patient
       serviceId: cliniko-web
-    patient-js:
-      path: /resources/js/**
-      serviceId: cliniko-web
+#    patient-js:
+#      path: /resources/**
+#      serviceId: cliniko-web
+#      strip-prefix: false
     dash-board:
       path: /dashboard
       serviceId: cliniko-web
@@ -33,8 +35,8 @@ zuul:
       path: /admin
       serviceId: cliniko-web
     result:
-          path: /result
-          serviceId: cliniko-web
+      path: /result
+      serviceId: cliniko-web
 
 ribbon:
   eureka:

@@ -21,7 +21,7 @@
 </style>
 
 <script src="//code.angularjs.org/snapshot/angular.min.js"></script>
-<script src="/resources/js/patient-script.js"></script>
+<script src="//localhost:9099/resources/js/patient-script.js"></script>
 
 </head> 
 <body ng-app="patient-app">

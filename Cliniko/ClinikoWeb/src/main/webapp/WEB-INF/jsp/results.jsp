@@ -45,8 +45,8 @@
             
             	<li><a href="/dashboard">Home</a></li>
 <!--                 <li><a href="#">Profile</a></li> -->
-                <li class="active"><a href="/patient">Patient</a></li>
-                <li><a href="/result">Results</a></li>
+                <li ><a href="/patient">Patient</a></li>
+                <li class="active"><a href="/result">Results</a></li>
                 <li><a href="/admin">Admin</a></li>
             	<form class="navbar-form navbar-left">
                 <div class="input-group">
