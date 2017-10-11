@@ -24,7 +24,7 @@
 <script src="//localhost:9099/resources/js/patient-script.js"></script>
 
 </head> 
-<body ng-app="patient-app">
+<body>
 
 <div class="container">
     <nav class="navbar navbar-inverse">
@@ -72,7 +72,7 @@
     </nav>
 </div>
 
-  <div class="container" ng-controller="patient-controller">
+  <div class="container"  ng-app="patientApp" ng-controller="patientController">
         <form class = "form-horizontal" role = "form">
    
 			   <div class = "form-group">
@@ -133,10 +133,10 @@
 			   
 			   <div class = "form-group">
 			      <div class = "col-sm-offset-2 col-sm-10">
-			         <button type = "submit" class = "btn btn-success" ng-click="update-patient(patient)"><i class="fa fa-floppy-o" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp;
+			         <button type = "submit" class = "btn btn-success" ng-click="updatePatient(patient)"><i class="fa fa-floppy-o" aria-hidden="true"></i> &nbsp;&nbsp;&nbsp;
 			         Save</button>
 			   	  </div>
-   </div>
+                </div>
 	</form>
 	<div class="row">
             <div class="col-xs-12">
