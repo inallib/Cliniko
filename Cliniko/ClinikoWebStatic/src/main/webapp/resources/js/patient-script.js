@@ -1,12 +1,16 @@
 (function(angular) {
-  'use strict';
-angular.module('patient-app', [])
-  .controller('patient-controller', ['$scope', function($scope) {
+angular.module('patientApp', [])
+  .controller('patientController', ['$scope', '$http', function($scope, $http) {
     $scope.master = {};
 
-    $scope.update = function(patient) {
-      $scope.master = angular.copy(user);
-      alert('ok');
+    $scope.updatePatient = function(patient) {
+      var res = $http.post('/savepatientweb', patient);
+//      res.success(function(data, status, headers, config) {
+//      			$scope.message = data;
+//      		});
+//      		res.error(function(data, status, headers, config) {
+//      			alert( "failure message: " + JSON.stringify({data: data}));
+//      		});
     };
 
     $scope.reset = function(form) {

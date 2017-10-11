@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -29,14 +30,10 @@ public class PatientFacetService {
 	
 	@ResponseBody
 	public String save(Patient patient) {
-		ResponseEntity<List<Patient>> exchange =
-				this.restTemplate.exchange(
-						"http://patient-dao/patientdao/add",
-						HttpMethod.GET,
-						null,
-						new ParameterizedTypeReference<List<Patient>>() {
-						},
-						(Object) "mstine");
+		String facetEndpoint = "http://patient-dao/patientdao/savepatientdao";
+		HttpEntity<Patient> request = new HttpEntity<>(patient);
+		Patient patientObj = restTemplate.postForObject(facetEndpoint, request, Patient.class);
+
 		return "Saved yes";
 	}
 	
