@@ -23,6 +23,7 @@
 <script src="//code.angularjs.org/snapshot/angular.min.js"></script>
 <script src="//localhost:9099/resources/js/patient-script.js"></script>
 
+
 </head> 
 <body>
 
@@ -51,12 +52,6 @@
                 <li><a href="/result">Results</a></li>
                 <li><a href="/admin">Admin</a></li>
             	<form class="navbar-form navbar-left">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search patient details">
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
-                    </span>
-                </div>
             	</form>
             	<li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">Yours <b class="caret"></b></a>

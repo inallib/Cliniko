@@ -19,6 +19,10 @@
 		margin-top: 20px;
 	}
 </style>
+
+<script src="//code.angularjs.org/snapshot/angular.min.js"></script>
+<script src="//localhost:9099/resources/js/result-script.js"></script>
+
 </head> 
 <body>
 
@@ -49,13 +53,7 @@
                 <li class="active"><a href="/result">Results</a></li>
                 <li><a href="/admin">Admin</a></li>
             	<form class="navbar-form navbar-left">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search patient details">
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
-                    </span>
-                </div>
-            	</form>
+                </form>
             	<li class="dropdown">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">Yours <b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -72,8 +70,33 @@
     </nav>
 </div>
 
-  <div class="container">
-  <h1>TBD</h1>
+  <div class="container" ng-app="resultApp" ng-controller="resultController">
+  <div class="input-group">
+         <input type="text" class="form-control" ng-model="searchString" placeholder="Search patient details">
+         <span class="input-group-btn">
+               <button type="button" class="btn btn-default" ng-click="searchResult(searchString)"><span class="glyphicon glyphicon-search"></span></button>
+         </span>
+   </div>
+
+   <table class="table table-hover" ng-show = "searchResuls">
+       <thead>
+         <tr>
+           <th>Name</th>
+           <th>Phone</th>
+           <th>DOB</th>
+           <th></th>
+         </tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td>{{searchResuls.patient.name}}</td>
+           <td>{{searchResuls.patient.name}}</td>
+           <td>{{searchResuls.patient.name}}</td>
+           <td>{{searchResuls.patient.name}}</td>
+         </tr>
+       </tbody>
+     </table>
+
 	<div class="row">
             <div class="col-xs-12">
                 <footer>
