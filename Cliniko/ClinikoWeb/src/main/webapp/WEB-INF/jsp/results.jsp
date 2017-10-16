@@ -90,9 +90,9 @@
        <tbody>
          <tr>
            <td>{{searchResuls.patient.name}}</td>
-           <td>{{searchResuls.patient.name}}</td>
-           <td>{{searchResuls.patient.name}}</td>
-           <td>{{searchResuls.patient.name}}</td>
+           <td>{{searchResuls.patient.phone}}</td>
+           <td>{{searchResuls.patient.dob}}</td>
+           <td><a href="#"> <span class="glyphicon glyphicon-list"></span></a></td>
          </tr>
        </tbody>
      </table>
