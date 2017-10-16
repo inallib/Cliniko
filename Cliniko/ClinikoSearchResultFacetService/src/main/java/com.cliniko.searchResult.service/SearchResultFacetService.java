@@ -1,9 +1,11 @@
 package com.cliniko.searchResult.service;
 
+import com.cliniko.searchResult.model.Patient;
 import com.cliniko.searchResult.model.SearchResults;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -24,6 +26,13 @@ public class SearchResultFacetService {
 
 
     public ResponseEntity<SearchResults> prepareSearchedResult(String searchString) {
-        return null;
+
+        String url = "http://search-result-dao/searchresultdao/retrivepatientdao/" + searchString;
+        ResponseEntity<Patient> response = restTemplate.getForEntity(url , Patient.class);
+
+        SearchResults searchResults = new SearchResults();
+        searchResults.setPatient(response.getBody());
+
+        return new ResponseEntity<SearchResults>(searchResults, HttpStatus.OK);
     }
 }

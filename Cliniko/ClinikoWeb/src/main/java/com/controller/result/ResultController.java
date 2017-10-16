@@ -42,19 +42,6 @@ public class ResultController {
         String url = "http://search-result-facet/searchresultfacet/fetchsearchresult/" + searchString;
         ResponseEntity<SearchResults> response = restTemplate.getForEntity(url , SearchResults.class);
 
-//        String facetEndpoint = "http://search-result-facet/searchresultfacet/savepatientfacet";
-//        HttpEntity<String> request = new HttpEntity<>(searchString);
-//        SearchResults searchResults = restTemplate.postForObject(facetEndpoint, request, Patient.class);
-
-
-
-//        Patient patient = new Patient();
-//        patient.setName("saurav");
-//
-//        SearchResults searchResults = new SearchResults();
-//        searchResults.setId(0);
-//        searchResults.setPatient(patient);
         return response;
-//        return new ResponseEntity<SearchResults>(searchResults, null, HttpStatus.CREATED);
     }
 }
