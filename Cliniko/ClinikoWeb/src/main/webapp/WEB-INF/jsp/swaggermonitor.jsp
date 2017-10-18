@@ -69,8 +69,7 @@
 </div>
 
   <div class="container">
-  <a href="/swaggermonitor">Swagger monitor</a>
-  <a href="/hystrixmonitor">Hystrix monitor</a>
+  Swagger monitor
 	<div class="row">
             <div class="col-xs-12">
                 <footer>
