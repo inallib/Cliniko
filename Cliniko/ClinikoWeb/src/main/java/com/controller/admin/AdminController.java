@@ -17,4 +17,14 @@ public class AdminController {
     public String showAdmin() {
         return "admin";
     }
+
+    @RequestMapping("/swaggermonitor")
+    public String showSwaggerMonitor() {
+        return "swaggermonitor";
+    }
+
+    @RequestMapping("/hystrixmonitor")
+    public String showHybrisMonitor() {
+        return "hystrixmonitor";
+    }
 }
