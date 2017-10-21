@@ -3,9 +3,9 @@ package com.controller.patient;
 import com.model.patient.Patient;
 import com.service.patient.PatientWebService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.context.annotation.Bean;
-import org.springframework.http.HttpEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
@@ -19,15 +19,6 @@ public class PatientController {
     @Autowired
     private PatientWebService patientWebService;
 
-    @Autowired
-    private RestTemplate restTemplate;
-
-    @Bean
-    @LoadBalanced
-    public RestTemplate getRestTemplate(){
-        return new RestTemplate();
-    }
-
     @RequestMapping("/loadall")
     public @ResponseBody
     Iterable<Patient> loadAllPatient() {
@@ -37,10 +28,7 @@ public class PatientController {
 
     @RequestMapping(value = "/savepatientweb", method = RequestMethod.POST)
     public  @ResponseBody String savePatient( @RequestBody Patient patient )   {
-        String facetEndpoint = "http://patient-facet/patientfacet/savepatientfacet";
-        HttpEntity<Patient> request = new HttpEntity<>(patient);
-        Patient patientObj = restTemplate.postForObject(facetEndpoint, request, Patient.class);
-        return "The company name" ;
+        return patientWebService.savePatient(patient) ;
     }
 
     @RequestMapping("/patient")
