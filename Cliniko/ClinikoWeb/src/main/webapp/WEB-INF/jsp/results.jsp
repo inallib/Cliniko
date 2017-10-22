@@ -75,7 +75,7 @@
 
   <div class="container" ng-app="resultApp" ng-controller="resultController">
   <div class="input-group">
-         <input type="text" class="form-control" ng-model="searchString" placeholder="Search patient details">
+         <input type="text" class="form-control" ng-model="searchString" placeholder="Search phone number">
          <span class="input-group-btn">
                <button type="button" class="btn btn-default" ng-click="searchResult(searchString)"><span class="glyphicon glyphicon-search"></span></button>
          </span>
@@ -115,21 +115,21 @@
     			  		<form>
     					  <div class="form-group">
     					    <label for="testname">Test name</label>
-    					    <input class="form-control" id="testname">
+    					    <input class="form-control" id="testname" ng-model="result.testName">
     					  </div>
     					  <div class="form-group">
     					    <label for="normalrange">Normal range</label>
-    					    <input class="form-control" id="normalrange">
+    					    <input class="form-control" id="normalrange" ng-model="result.normalRange">
     					  </div>
     					  <div class="form-group">
     					    <label for="result">Result</label>
-    					    <input class="form-control" id="result">
+    					    <input class="form-control" id="result" ng-model="result.result">
     					  </div>
     					  <div class="form-group">
     					    <label for="remarks">Remarks</label>
-    					    <input class="form-control" id="remarks">
+    					    <input class="form-control" id="remarks" ng-model="result.remarks">
     					  </div>
-    					  <button type="submit" class="btn btn-default">Submit</button>
+    					  <button type="submit" class="btn btn-default" ng-click="updateResult(result, searchResuls.patient)">Submit</button>
     					</form>
     			  	</div>
     			  	<br>
