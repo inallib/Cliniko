@@ -11,6 +11,11 @@ angular.module('resultApp', [])
                 });
     };
 
+    $scope.updateResult = function(result, patient) {
+        result.patient=patient;
+          var res = $http.post('/saveresultweb', result);
+        };
+
     $scope.reset = function(form) {
       if (form) {
         form.$setPristine();

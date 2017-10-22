@@ -2,6 +2,7 @@ package com.cliniko.searchResult.controller;
 
 import com.cliniko.searchResult.dao.SearchResultRepository;
 import com.cliniko.searchResult.model.Patient;
+import com.cliniko.searchResult.model.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,10 +21,11 @@ public class SearchResultDaoController {
 		Patient patient = searchResultRepository.findByPhone(searchString);
 		return new ResponseEntity<Patient>(patient, HttpStatus.OK);
 	}
-	
-//	@RequestMapping("/loadall")
-//	public @ResponseBody Iterable<Patient> loadAllPatient() {
-//		return patientRepository.findAll();
-//	}
+
+	@RequestMapping(value = "/saveresultdao", method = RequestMethod.POST)
+	public  ResponseEntity<HttpStatus> saveResult( @RequestBody Result result ) {
+//		searchResultRepository.save(result);
+		return new ResponseEntity<HttpStatus>(HttpStatus.OK);
+	}
 
 }
