@@ -1,7 +1,3 @@
-	
-<!-- <link rel="stylesheet" href="/resources/css/style.css"></link> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,9 +10,16 @@
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <style type="text/css">
 	.navbar{
 		margin-top: 20px;
+	}
+
+	.panelWidth{
+	    margin: auto;
+            width: 75%;
+            padding: 10px;
 	}
 </style>
 
@@ -77,25 +80,87 @@
                <button type="button" class="btn btn-default" ng-click="searchResult(searchString)"><span class="glyphicon glyphicon-search"></span></button>
          </span>
    </div>
+   <div class="row center-block">
+    <div class="panel-group panelWidth"  ng-show="searchResuls">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+              <a data-toggle="collapse" href="#collapse1">
+              <div class="row">
+                <div class="col-sm-6">Name: {{searchResuls.patient.name}}</div>
+              </div>
+              <div class="row">
+                 <div class="col-sm-6">DOB: {{searchResuls.patient.dob}}</div>
+              </div>
+              </a>
+            </h4>
+          </div>
+          <div id="collapse1" class="panel-collapse collapse">
+            <div class="panel-body">
+    			<div class="row">
+    			  	<div class="col-sm-6">
+    			  	    <div class="panel panel-warning">
+    			  	        <div class="panel-body">
+                                    <label>Age: {{searchResuls.patient.age}}</label><br>
 
-   <table class="table table-hover" ng-show = "searchResuls">
-       <thead>
-         <tr>
-           <th>Name</th>
-           <th>Phone</th>
-           <th>DOB</th>
-           <th></th>
-         </tr>
-       </thead>
-       <tbody>
-         <tr>
-           <td>{{searchResuls.patient.name}}</td>
-           <td>{{searchResuls.patient.phone}}</td>
-           <td>{{searchResuls.patient.dob}}</td>
-           <td><a href="#"> <span class="glyphicon glyphicon-list"></span></a></td>
-         </tr>
-       </tbody>
-     </table>
+                                    <label>E-mail: {{searchResuls.patient.email}}</label><br>
+
+                                    <label>Phone: {{searchResuls.patient.isdCode}} - {{searchResuls.patient.phone}}</label><br>
+
+                                    <label>Special Id: {{searchResuls.patient.specialId}}</label>
+                            </div>
+    			  	    </div>
+    			  	</div>
+    			  	<div class="col-sm-6">
+    			  		<form>
+    					  <div class="form-group">
+    					    <label for="testname">Test name</label>
+    					    <input class="form-control" id="testname">
+    					  </div>
+    					  <div class="form-group">
+    					    <label for="normalrange">Normal range</label>
+    					    <input class="form-control" id="normalrange">
+    					  </div>
+    					  <div class="form-group">
+    					    <label for="result">Result</label>
+    					    <input class="form-control" id="result">
+    					  </div>
+    					  <div class="form-group">
+    					    <label for="remarks">Remarks</label>
+    					    <input class="form-control" id="remarks">
+    					  </div>
+    					  <button type="submit" class="btn btn-default">Submit</button>
+    					</form>
+    			  	</div>
+    			  	<br>
+    			  	<div class="col-sm-12">
+    			  	       <table class="table table-hover">
+                               <thead>
+                                 <tr>
+                                   <th>Date</th>
+                                   <th>Test name</th>
+                                   <th>Normal range</th>
+                                   <th>Result</th>
+                                   <th>Remarks</th>
+                                 </tr>
+                               </thead>
+                               <tbody>
+                                 <tr>
+                                   <td>{{searchResuls.patient.name}}</td>
+                                   <td>{{searchResuls.patient.phone}}</td>
+                                   <td>{{searchResuls.patient.dob}}</td>
+                                   <td><a href="#"> <span class="glyphicon glyphicon-list"></span></a></td>
+                                   <td><a href="#"> <span class="glyphicon glyphicon-list"></span></a></td>
+                                 </tr>
+                               </tbody>
+                             </table>
+    			  	</div>
+    			</div>
+    		</div>
+            <div class="panel-footer">Panel Footer</div>
+          </div>
+        </div>
+      </div>
 
 	<div class="row">
             <div class="col-xs-12">
@@ -111,6 +176,7 @@
                 </footer>
             </div>
         </div>
+    </div>
     </div>
 </body>
 </html>
