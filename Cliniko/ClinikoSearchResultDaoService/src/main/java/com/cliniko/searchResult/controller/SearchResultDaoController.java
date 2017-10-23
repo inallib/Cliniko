@@ -1,5 +1,6 @@
 package com.cliniko.searchResult.controller;
 
+import com.cliniko.searchResult.dao.SaveResultRepository;
 import com.cliniko.searchResult.dao.SearchResultRepository;
 import com.cliniko.searchResult.model.Patient;
 import com.cliniko.searchResult.model.Result;
@@ -16,6 +17,9 @@ public class SearchResultDaoController {
 	@Autowired
 	private SearchResultRepository searchResultRepository;
 
+	@Autowired
+	private SaveResultRepository saveResultRepository;
+
 	@RequestMapping(value = "/retrivepatientdao/{searchString}", method = RequestMethod.GET)
 	public ResponseEntity<Patient> retrivePatient(@PathVariable("searchString") String searchString) {
 		Patient patient = searchResultRepository.findByPhone(searchString);
@@ -24,7 +28,7 @@ public class SearchResultDaoController {
 
 	@RequestMapping(value = "/saveresultdao", method = RequestMethod.POST)
 	public  ResponseEntity<HttpStatus> saveResult( @RequestBody Result result ) {
-//		searchResultRepository.save(result);
+		saveResultRepository.save(result);
 		return new ResponseEntity<HttpStatus>(HttpStatus.OK);
 	}
 
