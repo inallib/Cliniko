@@ -48,8 +48,7 @@ public class SearchResultFacetService {
     }
 
     private Result prepareResultWithToDateAndPatientId(Result result){
-        Date toDate = new Date();
-        result.setToDate(toDate);
+        result.setToDate(new Date());
         result.setPatientId(result.getPatient().getId());
         return result;
     }

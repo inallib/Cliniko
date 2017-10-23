@@ -12,13 +12,12 @@ import java.util.Date;
 /**
  * Created by ss on 22-10-2017.
  */
-//@Entity
-@Component
+@Entity
 public class Result {
 
-//    @Id
-//    @GeneratedValue(strategy= GenerationType.AUTO)
-    private String id;
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
+    private Integer id;
     private Integer patientId;
     private String testName;
     private String normalRange;
@@ -42,11 +41,11 @@ public class Result {
         this.toDate = toDate;
     }
 
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
