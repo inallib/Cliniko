@@ -144,13 +144,13 @@
                                    <th>Remarks</th>
                                  </tr>
                                </thead>
-                               <tbody>
+                               <tbody ng-repeat="result in searchResuls.resultsList">
                                  <tr>
-                                   <td>{{searchResuls.patient.name}}</td>
-                                   <td>{{searchResuls.patient.phone}}</td>
-                                   <td>{{searchResuls.patient.dob}}</td>
-                                   <td><a href="#"> <span class="glyphicon glyphicon-list"></span></a></td>
-                                   <td><a href="#"> <span class="glyphicon glyphicon-list"></span></a></td>
+                                   <td>{{result.toDate | date : short}}</td>
+                                   <td>{{result.testName}}</td>
+                                   <td>{{result.normalRange}}</td>
+                                   <td>{{result.result}}</td>
+                                   <td>{{result.remarks}}</td>
                                  </tr>
                                </tbody>
                              </table>

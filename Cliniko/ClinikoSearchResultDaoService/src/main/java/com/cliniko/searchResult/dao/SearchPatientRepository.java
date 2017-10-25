@@ -6,8 +6,9 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-
-public interface SearchResultRepository extends CrudRepository<Result, Long>{
-    List<Result> findByPatientId(Integer patientId);
-
+/**
+ * Created by ss on 25-10-2017.
+ */
+public interface SearchPatientRepository extends CrudRepository<Patient, Long> {
+    Patient findByPhone(String phoneNo);
 }

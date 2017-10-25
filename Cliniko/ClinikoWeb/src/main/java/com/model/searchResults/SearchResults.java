@@ -1,7 +1,10 @@
 package com.model.searchResults;
 
 import com.model.patient.Patient;
+import com.model.result.Result;
 import org.springframework.stereotype.Component;
+
+import java.util.List;
 
 /**
  * Created by ss on 15-10-2017.
@@ -10,13 +13,14 @@ import org.springframework.stereotype.Component;
 public class SearchResults {
     private int id;
     private Patient patient;
+    private List<Result> resultsList;
 
-    public SearchResults(int id, Patient patient) {
-        this.id = id;
-        this.patient = patient;
+    public List<Result> getResultsList() {
+        return resultsList;
     }
 
-    public SearchResults() {
+    public void setResultsList(List<Result> resultsList) {
+        this.resultsList = resultsList;
     }
 
     public int getId() {
