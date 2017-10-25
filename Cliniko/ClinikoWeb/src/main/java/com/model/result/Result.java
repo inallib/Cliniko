@@ -3,17 +3,37 @@ package com.model.result;
 import com.model.patient.Patient;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
+
 /**
  * Created by ss on 22-10-2017.
  */
 @Component
 public class Result {
     private String id;
+    private Integer patientId;
     private String testName;
     private String normalRange;
     private String result;
     private String remarks;
+    private Date toDate;
     private Patient patient;
+
+    public Integer getPatientId() {
+        return patientId;
+    }
+
+    public void setPatientId(Integer patientId) {
+        this.patientId = patientId;
+    }
+
+    public Date getToDate() {
+        return toDate;
+    }
+
+    public void setToDate(Date toDate) {
+        this.toDate = toDate;
+    }
 
     public Patient getPatient() {
         return patient;

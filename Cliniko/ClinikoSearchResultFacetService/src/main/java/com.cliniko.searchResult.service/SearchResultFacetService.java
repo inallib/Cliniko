@@ -6,13 +6,17 @@ import com.cliniko.searchResult.model.SearchResults;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
+import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by ss on 16-10-2017.
@@ -30,15 +34,34 @@ public class SearchResultFacetService {
 
 
     public ResponseEntity<SearchResults> prepareSearchedResult(String searchString) {
-
-        String url = "http://search-result-dao/searchresultdao/retrivepatientdao/" + searchString;
-        ResponseEntity<Patient> response = restTemplate.getForEntity(url , Patient.class);
-
         SearchResults searchResults = new SearchResults();
-        searchResults.setPatient(response.getBody());
+        Patient patient = fetchPatient(searchString);
+
+        searchResults.setPatient(patient);
+        searchResults.setResultsList(fetchResultList(String.valueOf(patient.getId())));
 
         return new ResponseEntity<SearchResults>(searchResults, HttpStatus.OK);
     }
+
+    private Patient fetchPatient(String searchString) {
+        String url = "http://search-result-dao/searchresultdao/retrivepatientdao/" + searchString;
+        ResponseEntity<Patient> response = restTemplate.getForEntity(url , Patient.class);
+
+        return response.getBody();
+    }
+
+    private List<Result> fetchResultList(String patientId) {
+        String url = "http://search-result-dao/searchresultdao/retriveresultdao/" + patientId;
+
+        ResponseEntity<List<Result>> response = restTemplate.exchange(url,
+                HttpMethod.GET, null, new ParameterizedTypeReference<List<Result>>() {
+                });
+
+        List<Result> resultsList = response.getBody();
+        return resultsList;
+    }
+
+
 
     public ResponseEntity<HttpStatus> resultSave(Result result) {
         String facetEndpoint = "http://search-result-dao/searchresultdao/saveresultdao";
