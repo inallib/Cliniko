@@ -17,6 +17,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by ss on 16-10-2017.
@@ -34,11 +35,15 @@ public class SearchResultFacetService {
 
 
     public ResponseEntity<SearchResults> prepareSearchedResult(String searchString) {
-        SearchResults searchResults = new SearchResults();
-        Patient patient = fetchPatient(searchString);
+        SearchResults searchResults = null;
 
-        searchResults.setPatient(patient);
-        searchResults.setResultsList(fetchResultList(String.valueOf(patient.getId())));
+        Optional<Patient> opPatient = Optional.ofNullable(fetchPatient(searchString));
+
+        if(opPatient.isPresent()) {
+            searchResults = new SearchResults();
+            searchResults.setPatient(opPatient.get());
+            searchResults.setResultsList(fetchResultList(String.valueOf(opPatient.get().getId())));
+        }
 
         return new ResponseEntity<SearchResults>(searchResults, HttpStatus.OK);
     }
