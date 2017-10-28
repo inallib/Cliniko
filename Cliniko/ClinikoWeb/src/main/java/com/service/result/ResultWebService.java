@@ -44,4 +44,11 @@ public class ResultWebService {
         restTemplate.postForObject(facetEndpoint, request, Result.class);
         return new ResponseEntity<HttpStatus>(HttpStatus.OK);
     }
+
+    public ResponseEntity<SearchResults> reloadResultAfterSave(String searchString) {
+        String url = "http://search-result-facet/searchresultfacet/fetchsearchresult/" + searchString;
+        ResponseEntity<SearchResults> response = restTemplate.getForEntity(url , SearchResults.class);
+
+        return response;
+    }
 }

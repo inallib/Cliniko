@@ -34,6 +34,11 @@ public class ResultController {
         return resultWebService.searchResult(searchString);
     }
 
+    @RequestMapping(value = "/loadresultweb/{searchString}", method = RequestMethod.GET)
+    public ResponseEntity<SearchResults> reloadResultAfterSave(@PathVariable("searchString") String searchString)   {
+        return resultWebService.reloadResultAfterSave(searchString);
+    }
+
     @RequestMapping(value = "/saveresultweb", method = RequestMethod.POST)
     public  ResponseEntity<HttpStatus> saveResult(@RequestBody Result result )   {
         return resultWebService.saveResult(result) ;

@@ -81,6 +81,9 @@
          </span>
    </div>
    <div class="row center-block">
+        <label ng-show= "searchResulsNotFound" class="label-danger">No patient found.</label>
+   </div>
+   <div class="row center-block">
     <div class="panel-group panelWidth"  ng-show="searchResuls">
         <div class="panel panel-info">
           <div class="panel-heading">
