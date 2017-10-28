@@ -6,9 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
+
+import javax.validation.Valid;
 
 /**
  * Created by ss on 24-09-2017.
@@ -27,7 +31,7 @@ public class PatientController {
     }
 
     @RequestMapping(value = "/savepatientweb", method = RequestMethod.POST)
-    public  @ResponseBody String savePatient( @RequestBody Patient patient )   {
+    public ResponseEntity<HttpStatus> savePatient(@RequestBody Patient patient )   {
         return patientWebService.savePatient(patient) ;
     }
 

@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -28,13 +29,13 @@ public class PatientFacetService {
 		return new RestTemplate();
 	}
 	
-	@ResponseBody
-	public String save(Patient patient) {
+
+	public ResponseEntity<HttpStatus> save(Patient patient) {
 		String facetEndpoint = "http://patient-dao/patientdao/savepatientdao";
 		HttpEntity<Patient> request = new HttpEntity<>(patient);
 		Patient patientObj = restTemplate.postForObject(facetEndpoint, request, Patient.class);
 
-		return "Saved yes";
+		return new ResponseEntity<HttpStatus>(HttpStatus.OK);
 	}
 	
 	@ResponseBody
