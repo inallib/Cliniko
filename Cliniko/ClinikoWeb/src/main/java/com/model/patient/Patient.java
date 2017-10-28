@@ -2,6 +2,9 @@ package com.model.patient;
 
 import org.springframework.stereotype.Component;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 @Component
 public class Patient {
 
@@ -9,6 +12,9 @@ public class Patient {
     private String name;
     private String email;
     private String isdCode;
+
+//    @NotNull
+//    @Size(min = 3, max = 15)
     private String phone;
     private String dob;
     private String age;

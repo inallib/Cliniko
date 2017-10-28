@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,11 +30,11 @@ public class PatientWebService {
     }
 
     @HystrixCommand(fallbackMethod = "savePatientFailedAtFacet")
-    public  @ResponseBody String savePatient(Patient patient )   {
+    public  ResponseEntity<HttpStatus> savePatient(Patient patient )   {
         String facetEndpoint = "http://patient-facet/patientfacet/savepatientfacet";
         HttpEntity<Patient> request = new HttpEntity<>(patient);
         Patient patientObj = restTemplate.postForObject(facetEndpoint, request, Patient.class);
-        return "Saved";
+        return new ResponseEntity<HttpStatus>(HttpStatus.OK);
     }
 
     public String savePatientFailedAtFacet() {
