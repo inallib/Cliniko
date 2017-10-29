@@ -2,8 +2,7 @@
 angular.module('resultApp', [])
   .controller('resultController', ['$scope', '$http', function($scope, $http) {
     $scope.searchResult = function(searchString) {
-        $http.get('/searchresultweb/' + searchString)
-        .then(function success(response, status, headers, config) {
+        $http.get('/searchresultweb/' + searchString).then(function success(response, status, headers, config) {
                     $scope.searchResuls = response.data;
 
                     if (!$scope.searchResuls.patient){
@@ -20,16 +19,23 @@ angular.module('resultApp', [])
 
     $scope.updateResult = function(result, patient) {
         result.patient=patient;
-          var res = $http.post('/saveresultweb', result);
-
-          $http.get('/loadresultweb/'+ $scope.searchResuls.patient.phone)
+          var res = $http.post('/saveresultweb', result)
           .then(function success(response, status, headers, config) {
-                              $scope.searchResuls = response.data;
 
-                          }, function error(response, status, headers, config) {
-                              alert('No record found');
-                          });
-        };
+                        $http.get('/loadresultweb/'+ $scope.searchResuls.patient.phone)
+                                  .then(function success(response, status, headers, config) {
+                                            $scope.searchResuls = response.data;
+
+                                  }, function error(response, status, headers, config) {
+                                             alert('No record found');
+                                  });
+
+
+                 }, function error(response, status, headers, config) {
+                     alert('No record found');
+            });
+
+     };
 
     $scope.reset = function(form) {
       if (form) {

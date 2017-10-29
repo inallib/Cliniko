@@ -1,23 +1,42 @@
 package com.model.patient;
 
+import org.hibernate.validator.constraints.Email;
 import org.springframework.stereotype.Component;
 
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 @Component
 public class Patient {
 
     private Integer id;
+
+    @NotNull
     private String name;
+
+    @Email
+    @NotNull
     private String email;
+
+    @NotNull
+    @Digits(integer = 4, fraction = 0)
     private String isdCode;
 
-//    @NotNull
-//    @Size(min = 3, max = 15)
+    @NotNull
+    @Size(min = 3, max = 15)
     private String phone;
+
+    @NotNull
+    @Pattern(regexp="^\\d{1,2}\\/\\d{1,2}\\/\\d{4}$")
     private String dob;
+
+    @NotNull
+    @Digits(integer = 3, fraction = 0)
     private String age;
+
+    @NotNull
     private String specialId;
 
     public String getSpecialId() {

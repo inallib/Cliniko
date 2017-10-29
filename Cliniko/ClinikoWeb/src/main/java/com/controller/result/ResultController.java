@@ -17,6 +17,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
+
 @Controller
 //@EnableCircuitBreaker
 public class ResultController {
@@ -30,7 +33,7 @@ public class ResultController {
     }
 
     @RequestMapping(value = "/searchresultweb/{searchString}", method = RequestMethod.GET)
-    public ResponseEntity<SearchResults> searchResult(@PathVariable("searchString") String searchString)   {
+    public ResponseEntity<SearchResults> searchResult(@PathVariable("searchString") @NotNull String searchString)   {
         return resultWebService.searchResult(searchString);
     }
 
@@ -40,7 +43,7 @@ public class ResultController {
     }
 
     @RequestMapping(value = "/saveresultweb", method = RequestMethod.POST)
-    public  ResponseEntity<HttpStatus> saveResult(@RequestBody Result result )   {
+    public  ResponseEntity<HttpStatus> saveResult(@RequestBody @Valid Result result )   {
         return resultWebService.saveResult(result) ;
     }
 }

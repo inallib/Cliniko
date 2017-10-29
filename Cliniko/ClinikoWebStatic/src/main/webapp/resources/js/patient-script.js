@@ -4,13 +4,19 @@ angular.module('patientApp', [])
     $scope.master = {};
 
     $scope.updatePatient = function(patient) {
-      var res = $http.post('/savepatientweb', patient);
-//      res.success(function(data, status, headers, config) {
-//      			$scope.message = data;
-//      		});
-//      		res.error(function(data, status, headers, config) {
-//      			alert( "failure message: " + JSON.stringify({data: data}));
-//      		});
+      $http.post('/savepatientweb', patient).then (function success(response) {
+                                                              $scope.message = 'Patient added!';
+                                                              $scope.errorMessage = null;
+                                                          },
+                                                          function error(response) {
+                                                              if (response.status == 400) {
+                                                                $scope.errorMessage = response.data[0];
+                                                              }
+                                                              else {
+                                                                $scope.errorMessage = 'Error adding user!';
+                                                              }
+                                                              $scope.message = '';
+                                                        });
     };
 
     $scope.reset = function(form) {
