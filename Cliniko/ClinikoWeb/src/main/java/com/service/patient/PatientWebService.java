@@ -30,11 +30,11 @@ public class PatientWebService {
     }
 
     @HystrixCommand(fallbackMethod = "savePatientFailedAtFacet")
-    public  ResponseEntity<HttpStatus> savePatient(Patient patient )   {
+    public  ResponseEntity<Object> savePatient(Patient patient )   {
         String facetEndpoint = "http://patient-facet/patientfacet/savepatientfacet";
         HttpEntity<Patient> request = new HttpEntity<>(patient);
         Patient patientObj = restTemplate.postForObject(facetEndpoint, request, Patient.class);
-        return new ResponseEntity<HttpStatus>(HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     public String savePatientFailedAtFacet() {

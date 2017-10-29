@@ -13,6 +13,7 @@
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <style type="text/css">
 	.navbar{
@@ -68,61 +69,71 @@
 </div>
 
   <div class="container"  ng-app="patientApp" ng-controller="patientController">
-        <form class = "form-horizontal" role = "form">
-   
+        <form class = "form-horizontal" role = "form" name="patientForm" >
+
+                 <div ng-show="message" class="alert alert-success alert-dismissable fade in" id="divMessage">
+                      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                      <strong>Success!</strong> {{message}}
+                 </div>
+
+                  <div ng-show="errorMessage" class="alert alert-danger">
+                        <p class="text-success">{{errorMessage}}</p>
+                  </div>
 			   <div class = "form-group">
 			      <label for = "firstname" class = "col-sm-2 control-label">Name</label>
 					
-			      <div class = "col-sm-10">
-			         <input type = "text" class = "form-control" name="name" ng-model="patient.name" placeholder = "Enter name">
+			      <div class = "col-sm-6">
+			         <input type = "text" class = "form-control" required name="name" ng-model="patient.name" placeholder = "Enter name">
 			      </div>
+
 			   </div>
 			   
 			   <div class = "form-group">
 			      <label for = "lastname" class = "col-sm-2 control-label">Email</label>
 					
-			      <div class = "col-sm-10">
-			         <input type = "text" class = "form-control" name="email" ng-model="patient.email" placeholder = "Enter email">
+			      <div class = "col-sm-6">
+			         <input type = "text" class = "form-control" required name="email" ng-model="patient.email" placeholder = "Enter email">
 			      </div>
 			   </div>
 			   
 			   <div class = "form-group">
 			      <label for = "lastname" class = "col-sm-2 control-label">ISD Code</label>
 					
-			      <div class = "col-sm-10">
-			         <input type = "text" class = "form-control" name="isdCode" ng-model="patient.isdCode" placeholder = "Enter ISD code">
+			      <div class = "col-sm-6">
+			         <input type = "text" class = "form-control" required name="isdCode" ng-model="patient.isdCode" placeholder = "Enter ISD code">
 			      </div>
+
 			   </div>
 			   
 			   <div class = "form-group">
 			      <label for = "lastname" class = "col-sm-2 control-label">Phone</label>
 					
-			      <div class = "col-sm-10">
-			         <input type = "text" class = "form-control" name="phone" ng-model="patient.phone"  placeholder = "Enter phone">
+			      <div class = "col-sm-6">
+			         <input type = "text" class = "form-control" name="phone" ng-model="patient.phone"  placeholder = "Enter phone" required>
 			      </div>
 			   </div>
-			   
+
 			   <div class = "form-group">
 			      <label for = "lastname" class = "col-sm-2 control-label">DOB</label>
 					
-			      <div class = "col-sm-10">
-			         <input type = "text" class = "form-control" name="dob" ng-model="patient.dob" placeholder = "Enter DOB">
+			      <div class = "col-sm-6">
+			         <input type = "text" class = "form-control" required name="dob" ng-model="patient.dob" placeholder = "Enter DOB">
 			      </div>
 			   </div>
 			   
 			   <div class = "form-group">
 			      <label for = "lastname" class = "col-sm-2 control-label">Age</label>
 					
-			      <div class = "col-sm-10">
-			         <input type = "text" class = "form-control" name="age" ng-model="patient.age" placeholder = "Enter age">
+			      <div class = "col-sm-6">
+			         <input type = "text" class = "form-control" required name="age" ng-model="patient.age" placeholder = "Enter age">
 			      </div>
 			   </div>
 			   
 			   <div class = "form-group">
 			      <label for = "lastname" class = "col-sm-2 control-label">Special ID</label>
 					
-			      <div class = "col-sm-10">
-			         <input type = "text" class = "form-control" name="specialId" ng-model="patient.specialId" placeholder = "Enter special Id">
+			      <div class = "col-sm-6">
+			         <input type = "text" class = "form-control" required name="specialId" ng-model="patient.specialId" placeholder = "Enter special Id">
 			      </div>
 			   </div>
 			   

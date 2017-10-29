@@ -3,6 +3,7 @@ package com.model.result;
 import com.model.patient.Patient;
 import org.springframework.stereotype.Component;
 
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
@@ -12,9 +13,17 @@ import java.util.Date;
 public class Result {
     private String id;
     private Integer patientId;
+
+    @NotNull
     private String testName;
+
+    @NotNull
     private String normalRange;
+
+    @NotNull
     private String result;
+
+    @NotNull
     private String remarks;
     private Date toDate;
     private Patient patient;
